@@ -45,7 +45,7 @@ public class ResetServlet extends HttpServlet {
         //HttpSession session = request.getSession();
 
         try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            /*Class.forName("org.apache.derby.jdbc.ClientDriver");
             String driverURL = "jdbc:derby://localhost:1527/shohin";
             Connection con = DriverManager.getConnection(driverURL, "db", "db");
             
@@ -63,11 +63,11 @@ public class ResetServlet extends HttpServlet {
             request.setAttribute("data", list);
             rs.close();
             stmt.close();
-            con.close();
+            con.close();*/
         } catch (Exception e) {
             System.out.println("エラーです");
         } finally {
-            RequestDispatcher rd = request.getRequestDispatcher("/itemListFromDB.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/itemListFromDB.html");
             rd.forward(request, response);
         }
 

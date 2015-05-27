@@ -37,7 +37,7 @@ public class CartServlet  extends HttpServlet {
      */
      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+    	 response.setContentType("text/html;charset=UTF-8");
         //PrintWriter out = response.getWriter();
         
         request.getSession();     
@@ -48,9 +48,8 @@ public class CartServlet  extends HttpServlet {
         } else { // 何もチェックされていない。
             numChecks = 0;
         }
-
         try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            /*Class.forName("org.apache.derby.jdbc.ClientDriver");
             String driverURL = "jdbc:derby://localhost:1527/shohin";
             Connection con = DriverManager.getConnection(driverURL, "db", "db");
             // Connection con = jdbctest.getConnection();
@@ -85,9 +84,9 @@ public class CartServlet  extends HttpServlet {
             // 表示のため、結果をリクエスト変数にしまう。
            request.setAttribute("count", numChecks);
            request.setAttribute("data", list);
-           request.setAttribute("total", total);
+           request.setAttribute("total", total);*/
 
-            RequestDispatcher rd = request.getRequestDispatcher("/cartCheckBox.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/cartCheckBox.html");
             rd.forward(request, response);
 
         } catch (Exception e) {

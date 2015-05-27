@@ -99,7 +99,7 @@ public class LoginServlet extends HttpServlet{
 
                 // 次のページに移動
                 //RequestDispatcher rd = request.getRequestDispatcher("/loginSuccess.jsp"); 
-                RequestDispatcher rd = request.getRequestDispatcher("/itemListFromDB.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/itemListFromDB.html");
                 rd.forward(request, response);
 
         } catch(Exception e){
