@@ -14,7 +14,7 @@
       <h2>${user}さん、お好きなケーキを選んでください</h2>
 
 
-       <form action="cart.do" method="get" class="cart">
+       <form action="/cart" method="get" class="cart">
           <table class="menu">
               <c:forEach items="${data}" var="rec">
                   <tr>
@@ -26,12 +26,12 @@
               </c:forEach>
 
           </table>
-          <input type="submit" name="cart.do" value="カートの内容を確認して注文へ進む" />
+          <input type="submit" name="/cart" value="カートの内容を確認して注文へ進む" />
       </form>
 
 
 
-    <form action="logout.do" method="post">
+    <form action="/logout" method="post">
         <input type="submit" name="logout" value="ログアウト" />
     </form>
     </body>

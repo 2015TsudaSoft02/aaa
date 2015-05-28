@@ -6,7 +6,7 @@
         <title>Thank you</title>
     </head>
     <body>
- <form action="logout.do" method="get" class="logout">
+ <form action="/logout" method="get" class="logout">
      <div align="center">
     <h1>Suger Pop</h1>
     <p>
