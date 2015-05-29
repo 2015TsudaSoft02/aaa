@@ -66,7 +66,6 @@ public class LoginServlet extends HttpServlet{
             if(rs.next()) {
                 found = true;
             }
-
             String nextJsp;
             if (!found) {
                 // パスワードが正しくない場合、セッションを無効にする。

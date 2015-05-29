@@ -54,7 +54,6 @@ public class CartServlet  extends HttpServlet {
             Connection con = DriverManager.getConnection(driverURL, "db", "db");
             // Connection con = jdbctest.getConnection();
                     java.sql.Statement stmt = con.createStatement();
-
             List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
             int total = 0;
                        

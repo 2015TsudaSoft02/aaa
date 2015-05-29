@@ -1,5 +1,7 @@
 package com.tuyano.libro.mygaeapp;
 
+import java.util.Date;
+
 import javax.jdo.annotations.*;
  
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
@@ -9,22 +11,26 @@ public class LinkData {
     private Long id;
      
     @Persistent
-    private String name;
+    private String title;
      
     @Persistent
-    private String picture;
+    private String url;
      
     @Persistent
-    private String price;
-    
-    public LinkData(String name, String picture, String price) {
-    	 super();
-         this.name= name;
-         this.picture = picture;
-         this.price = price;
+    private String comment;
+     
+    @Persistent
+    private Date datetime;
+ 
+    public LinkData(String title, String url, String comment, Date datetime) {
+        super();
+        this.title = title;
+        this.url = url;
+        this.comment = comment;
+        this.datetime = datetime;
     }
-
-	public Long getId() {
+ 
+    public Long getId() {
         return id;
     }
  
@@ -32,28 +38,35 @@ public class LinkData {
         this.id = id;
     }
  
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
  
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
  
-    public String getPicture() {
-        return picture;
+    public String getUrl() {
+        return url;
     }
  
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public void setUrl(String url) {
+        this.url = url;
     }
  
-    public String getPrice() {
-        return price;
+    public String getComment() {
+        return comment;
     }
  
-    public void setPrice(String price) {
-        this.price = price;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
  
+    public Date getDatetime() {
+        return datetime;
+    }
+ 
+    public void setDatetime(Date datetime) {
+        this.datetime = datetime;
+    }
 }

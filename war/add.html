@@ -2,18 +2,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>追加</title>
+        <title>LinkDataの追加</title>
     </head>
     <body>
-        <h1>追加</h1>
+        <h1>商品の追加(管理者用)</h1>
         <table>
         <form method="post" action="/add">
-            <tr><th>商品名</th><td><input type="text" name="name"></td></tr>
-            <tr><th>画像</th><td><input type="text" name="picture"></td></tr>
-            <tr><th>値段</th><td><input  type="text" name="price"></td></tr>
+            <tr><th>商品名:</th><td><input type="text" name="title"></td></tr>
+            <tr><th>写真:</th><td><input type="text" name="url"></td></tr>
+            <tr><th>おすすめポイント:</th><td><textarea name="comment"></textarea></td></tr>
             <tr><th></th><td><input type="submit" value="追加"></td></tr>
         </form>
         </table>
     </body>
 </html>
- 
