@@ -5,7 +5,7 @@
 <title>データの表示</title>
 <script type="text/javascript" src="lib.js"></script>
 <script type="text/javascript">
-<!--
+
 function callback(request){
 var json = eval(request.responseText);
 var res = '';
@@ -16,26 +16,57 @@ res += '<tr><td>' + json[0].url +'</td></tr>';
 res += '<tr><td>' + json[0].comment +'</td></tr>';
 } else {
 for (var i = 0;i < json.length;i++){
-res += '<tr><td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a></td>';
+res += '<form id="frmMain"><tr><td><input type="checkbox" value=json[i].id name="shohinid" /></td>';
 res += '<td><a href="' + json[i].url + '">' + json[i].title + '</a></td>' +
 '<td><a href="edit.html?id=' + json[i].id + '">Edit</td>' +
-'<td><a href="del.html?id=' + json[i].id + '">Delete</td></tr>';
+'<td><a href="del.html?id=' + json[i].id + '">Delete</td></tr></form>';
 }
 }
 var obj = document.getElementById("datatable");
 obj.innerHTML = res;
 }
-//-->
+function setValue(){
+	var ckboxList = document.getElementById("frmMain").getElementsByTagName("input");
+	var value = new String();
+	for(var i=0;i<ckboxList.length;i++){
+	value += ckboxList[i].checked;
+	if(i<ckboxList.length-1){
+	value += "&";
+	}
+	}
+	location.href = "cartCheckBox.html?"+value;
+	return;
+}
 </script>
 </head>
 <body onload="getData(null);">
-<h1>SugarPopへようこそ</h1>
-<table id="datatable" border="1">
-<tr>
-<td>wait...</td>
-</tr>
-</table>
-<br>
-<div><a href="add.html">商品の追加(管理者用)</a></div>
+    <div align="center">
+    <h1>Suger Pop - 商品一覧</h1>
+    <h2>お好きなケーキを選んでください</h2>
+
+        
+   <!--  <table class="menu">
+       <c:forEach items="${data}" var="rec">
+            <tr>
+                <td><input type="checkbox" value=${rec.id} name="shohinid" /></td>
+                <td>${rec.id}</td>
+                <td>${rec.name}</td>
+                <td class="price">${rec.price} 円</td>
+            </tr>
+       </c:forEach>
+          </table> -->
+   <table id="datatable" border="1">
+    <tr>
+      <td>wait...</td>
+    </tr>
+  </table>
+   <form action="/cart" method="get" class="cart">
+  <br>
+  <div><a href="add.html">商品の追加(管理者用)</a></div>
+  <input type="submit" name="/cart" value="カートの内容を確認して注文へ進む" onclick="setValue();">
+  </form>
+  <form action="/logout" method="post">
+      <input type="submit" name="logout" value="ログアウト" />
+  </form>
 </body>
 </html>
