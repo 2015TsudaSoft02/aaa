@@ -17,9 +17,7 @@ res += '<tr><td>' + json[0].comment +'</td></tr>';
 } else {
 for (var i = 0;i < json.length;i++){
 res += '<form id="frmMain"><tr><td><input type="checkbox" value=json[i].id name="shohinid" /></td>';
-res += '<td><a href="' + json[i].url + '">' + json[i].title + '</a></td>' +
-'<td><a href="edit.html?id=' + json[i].id + '">Edit</td>' +
-'<td><a href="del.html?id=' + json[i].id + '">Delete</td></tr></form>';
+res += '<td><a href="' + json[i].url + '">' + json[i].title + '</a></td>' ;
 }
 }
 var obj = document.getElementById("datatable");

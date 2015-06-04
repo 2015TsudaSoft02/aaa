@@ -30,6 +30,7 @@ public class PlaceServlet extends HttpServlet {
 	    out.println("</tr></div>");
 	    out.println("</table>");
 	    out.println("<a href=thankyou.html>この内容で注文する</a>");
+	    out.println("<a href=place_date.html>この内容を変更する</a>");
 	    out.println("</BODY>");
 	    out.println("</HTML>");
 	    out.close();
