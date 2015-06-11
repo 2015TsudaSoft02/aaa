@@ -20,8 +20,8 @@ public class PlaceServlet extends HttpServlet {
 	    out.println("<HEAD>");
 	    out.println("<TITLE>配送場所・配送日時</TITLE>");
 	    out.println("</HEAD>");
-	    out.println("<BODY>");
-	    out.println("<H1><Center>SignUp Dagta</Center></H1>");
+	    out.println("<BODY bgcolor="+"#fff8dc"+">");
+	    out.println("<H1><Center><font color="+"#00BFFF"+">SignUp Dagta</font></Center></H1>");
 	    out.println("<BR><HR><BR>");
 	    out.println("<UL>");
 	    out.println("<tr>");
@@ -30,7 +30,7 @@ public class PlaceServlet extends HttpServlet {
 	    out.println("</div>");
 	    out.println("</table>");
 	    out.println("<center><a href=thankyou.html>この内容で注文する</a> "+" <a href=place_date.html>この内容を変更する</a></center>");
-	    out.println("<div><Center>Copyright (C) 2015 Suger Pop All Rights Reserved.</Center></div>");
+	    out.println("<div><Center>Copyright &copy; 2015 Suger Pop All Rights Reserved.</Center></div>");
 	    out.println("</BODY>");
 	    out.println("</HTML>");
 	    out.close();
