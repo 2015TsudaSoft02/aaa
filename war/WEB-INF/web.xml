@@ -76,7 +76,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     <servlet-name>Place</servlet-name>
 	<url-pattern>/place</url-pattern>
 	</servlet-mapping>
-	<servlet>
+<servlet>
 	<servlet-name>Question</servlet-name>
 	<servlet-class>com.tuyano.libro.mygaeapp.QuestionServlet</servlet-class>
 </servlet>

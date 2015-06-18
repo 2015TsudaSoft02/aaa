@@ -1,46 +1,35 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>データの表示</title>
-<script type="text/javascript" src="lib.js"></script>
-<script type="text/javascript">
-
-function callback(request){
-var json = eval(request.responseText);
-var res = '';
-if (json.length == 1){
-res += '<tr><td>' + json[0].id +'</td></tr>';
-res += '<tr><td>' + json[0].title +'</td></tr>';
-res += '<tr><td>' + json[0].url +'</td></tr>';
-res += '<tr><td>' + json[0].comment +'</td></tr>';
-} else {
-for (var i = 0;i < json.length;i++){
-res += '<form id="frmMain"><tr><td><input type="checkbox" value=json[i].id name="shohinid" /></td>';
-res += '<td><a href="' + json[i].url + '">' + json[i].title + '</a></td>' ;
-}
-}
-var obj = document.getElementById("datatable");
-obj.innerHTML = res;
-}
-function setValue(){
-	var ckboxList = document.getElementById("frmMain").getElementsByTagName("input");
-	var value = new String();
-	for(var i=0;i<ckboxList.length;i++){
-	value += ckboxList[i].checked;
-	if(i<ckboxList.length-1){
-	value += "&";
-	}
-	}
-	location.href = "cartCheckBox.html?"+value;
-	return;
-}
-</script>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>SugarPopへようこそ</title>
+    <script type="text/javascript" src="lib.js"></script>
+        <script type="text/javascript">
+            function callback(request){
+                var json = eval(request.responseText);
+                var res = '';
+                if (json.length == 1){
+                    res += '<tr><td>' + json[0].id +'</td></tr>';
+                    res += '<tr><td>' + json[0].title +'</td></tr>';
+                    res += '<tr><td>' + json[0].url +'</td></tr>';
+                    res += '<tr><td>' + json[0].comment +'</td></tr>';
+                } else {
+                    for (var i = 0;i < json.length;i++){
+                        res += '<td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].id + '</a></td>';
+                        res += '<td><a href="' + json[i].url + '">' + json[i].title + '</a></td>' +
+                        '<td><a href="edit.html?id=' + json[i].id + '">Edit</td>' +
+                        '<td><a href="del.html?id=' + json[i].id + '">Delete</td></tr></form>';
+                    }
+                }
+                var obj = document.getElementById("datatable");
+                obj.innerHTML = res;
+            }
+        </script>
 </head>
-<body onload="getData(null);" bgcolor="#fff8dc">
+<body onload="getData(null);" background="./flowerbanner0036.jpg">
     <div align="center">
-    <h1><font color="#9ACD32">Suger Pop - 商品一覧</font></h1>
-    <h2><font color="#32CD32">お好きなケーキを選んでください</font></h2>
+     <h1><font color="#9ACD32">Suger Pop - 当店の商品一覧</font></h1>
+    <h2><font color="#32CD32">★これらのお菓子の中から今日のあなたにピッタリのお菓子をお届けします★</font></h2>
 
         
    <!--  <table class="menu">
@@ -60,7 +49,7 @@ function setValue(){
   </table>
    <form action="/cart" method="get" class="cart">
   <br>
-  <input type="submit" name="/cart" value="カートの内容を確認して注文へ進む" onclick="setValue();">
+  <input type="submit" name="/cart" value="~このお菓子をあなたに~" onclick="setValue();">
   </form>
   <form action="/logout" method="post">
       <input type="submit" name="logout" value="ログアウト" />

@@ -10,4 +10,5 @@ String msg; if( user != null ){
 	msg = "こんにちは! こちらから "     + "<a href='" + userService.createLoginURL("/index.html") + "'>サインイン</a> してください!"; 
 	} System.out.println( msg ); 
 	%> 
-	<p class="round"><%= msg %></p>
+	<body background="./flowerbanner0036.jpg">
+	<p class="round"><h1><font color="#C71585"><%= msg %></font></h1></p>

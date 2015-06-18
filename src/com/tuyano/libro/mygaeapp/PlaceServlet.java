@@ -20,7 +20,7 @@ public class PlaceServlet extends HttpServlet {
 	    out.println("<HEAD>");
 	    out.println("<TITLE>配送場所・配送日時</TITLE>");
 	    out.println("</HEAD>");
-	    out.println("<BODY bgcolor="+"#fff8dc"+">");
+	    out.println("<BODY background="+"./flowerbanner0036.jpg"+">");
 	    out.println("<H1><Center><font color="+"#00BFFF"+">SignUp Dagta</font></Center></H1>");
 	    out.println("<BR><HR><BR>");
 	    out.println("<UL>");

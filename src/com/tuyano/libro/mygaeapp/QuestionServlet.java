@@ -4,10 +4,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class QuestionServlet {
+public class QuestionServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse res)
 	          throws ServletException, IOException {
@@ -19,7 +20,7 @@ public class QuestionServlet {
 	    out.println("<HEAD>");
 	    out.println("<TITLE>配送場所・配送日時</TITLE>");
 	    out.println("</HEAD>");
-	    out.println("<BODY bgcolor="+"#fff8dc"+">");
+	    out.println("<BODY background="+"./flowerbanner0036.jpg"+">");
 	    out.println("<H1><Center><font color="+""+">アンケート内容確認</font></Center></H1>");
 	    out.println("<BR><HR><BR>");
 	    out.println("<UL>");
